@@ -16,6 +16,4 @@ class TracksController < ApplicationController
     render json: @tracks
   end
 
-  private
-
 end

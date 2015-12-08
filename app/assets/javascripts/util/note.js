@@ -26,7 +26,7 @@
 
  Note.prototype = {
    start: function () {
-      this.gainNode.gain.value = 50;
+      this.gainNode.gain.value = 0.3;
    },
 
    stop: function () {

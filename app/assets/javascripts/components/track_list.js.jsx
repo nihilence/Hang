@@ -10,15 +10,17 @@ var TrackList = React.createClass({
 
   render: function () {
     return (
-      <div className="track-list">
-        <h1> Track List </h1>
-        {
-          this.state.tracks.map(function (track) {
-            return <TrackPlayer key={track.get('id')} track={track}>track.name </TrackPlayer>;
-          })
+      <div>
+        <h1 className="track-header"> Track List </h1>
+        <div className="track-list">
+          {
+            this.state.tracks.map(function (track) {
+              return <TrackPlayer key={track.id} track={track}>track.name </TrackPlayer>;
+            })
 
-        });
-        }
+           });
+          }
+        </div>
       </div>
     );
   },

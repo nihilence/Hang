@@ -1,7 +1,6 @@
 (function(root){
   root.TrackUtil = {
     createTrack: function(track) {
-      console.log("called");
       $.ajax({
         url: '/tracks',
         method: 'POST',
@@ -22,6 +21,7 @@
 
         TrackActions.resetTracks(tracks);
       });
+
     }
   };
 })(this);

@@ -37,7 +37,6 @@ var Recorder = React.createClass({
       this.state.track.startRecording();
     }
 
-    console.log(this.state.recording);
   },
 
   playClick: function() {

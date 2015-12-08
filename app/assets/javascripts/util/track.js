@@ -30,16 +30,17 @@ Track.prototype = {
 
     var currentNote = 0,
         playbackStartTime = Date.now(),
-        sequenceLength = this.attributes.sequence.length,
+        sequence = this.attributes.sequence,
         delta;
 
     this.interval = setInterval( function(){
 
       delta = Date.now() - playbackStartTime;
+      if(currentNote < sequence.length) {
 
-      if(currentNote < sequenceLength) {
-        if (delta >= this.attributes.sequence[currentNote].timeSlice){
-          var notes = this.attributes.sequence[currentNote].notes || [];
+        if (delta >= sequence[currentNote].timeSlice){
+
+          var notes = sequence[currentNote].notes || [];
           KeyActions.groupUpdate(notes);
           currentNote++;
         }

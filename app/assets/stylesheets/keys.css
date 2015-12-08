@@ -47,7 +47,14 @@ body {
 
 .track-list {
   position: absolute;
-  bottom: 400px;
+  top: 60px;
+  left: 600px;
+  color: #ff00ff;
+}
+
+.track-header {
+  position: absolute;
+  top: 0;
   left: 600px;
   color: #ff00ff;
 }
