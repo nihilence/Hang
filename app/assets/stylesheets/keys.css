@@ -1,0 +1,20 @@
+.note-key.pressed {
+  background-color: #8f00b3;
+}
+
+.note-key {
+  border: thin #ff00ff solid;
+  width: 40%;
+  margin: auto;
+  background-color: #00e5e6;
+  text-align: center;
+}
+
+h1, h5 {
+  text-align: center;
+  color: #ff00ff;
+}
+
+body {
+  background-color: black;
+}
