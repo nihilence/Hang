@@ -13,7 +13,7 @@ var Organ = React.createClass({
 
   render: function () {
     return (
-      <div>
+      <div className="container">
         <div className="keys">
           {
             Object.keys(TONES).map(function(noteName) {
@@ -21,6 +21,7 @@ var Organ = React.createClass({
             })
           }
         </div>
+        <Recorder/>
       </div>
     );
   }
