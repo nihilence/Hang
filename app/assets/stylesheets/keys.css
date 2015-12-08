@@ -1,8 +1,10 @@
+.save {
+  margin-top: 1%;
+}
 .keys {
   display: block;
   height: 200px;
   width: 500px;
-  margin-left: 35%;
 }
 .note-key.pressed {
   background-color: #8f00b3;
@@ -12,14 +14,11 @@
   float: left;
   border: thin #ff00ff solid;
   width: 50px;
-  margin: auto;
   background-color: #00e5e6;
-  text-align: center;
   height: 200px;
 }
 
 h1, h5, h2 {
-  text-align: center;
   color: #ff00ff;
 }
 
@@ -44,7 +43,4 @@ body {
 
 .play {
   background-color: green;
-}
-.buttons {
-  text-align: center;
 }

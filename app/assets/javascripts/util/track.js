@@ -1,17 +1,24 @@
 function Track(attrs) {
-  var defaults = { name: " ", sequence: [] };
+  var defaults = { name: "", sequence: [] };
   this.attributes = $.extend(defaults, attrs);
-  this.sequence = this.attributes.sequence;
 }
 
 Track.prototype = {
   startRecording: function () {
-    this.sequence = [];
+    this.attributes.sequence = [];
     this.start = Date.now();
   },
 
   addNotes: function(notes) {
-    this.sequence.push({ notes: notes, timeSlice: Date.now() - this.start });
+    this.attributes.sequence.push({ notes: notes, timeSlice: Date.now() - this.start });
+  },
+
+  get: function(attr) {
+    return this.attributes[attr];
+  },
+
+  set: function (attr, val) {
+    this.attributes[attr] = val;
   },
 
   stopRecording: function () {
@@ -23,7 +30,7 @@ Track.prototype = {
 
     var currentNote = 0,
         playbackStartTime = Date.now(),
-        sequenceLength = this.sequence.length,
+        sequenceLength = this.attributes.sequence.length,
         delta;
 
     this.interval = setInterval( function(){
@@ -31,12 +38,10 @@ Track.prototype = {
       delta = Date.now() - playbackStartTime;
 
       if(currentNote < sequenceLength) {
-        if (delta >= this.sequence[currentNote].timeSlice){
-          var notes = this.sequence[currentNote].notes || [];
+        if (delta >= this.attributes.sequence[currentNote].timeSlice){
+          var notes = this.attributes.sequence[currentNote].notes || [];
           KeyActions.groupUpdate(notes);
           currentNote++;
-          console.log("sequence ", this.sequence.length);
-          console.log("CN ", currentNote);
         }
       } else {
         clearInterval(this.interval);
@@ -46,7 +51,17 @@ Track.prototype = {
   },
 
   isBlank: function () {
-    return this.sequence.length === 0;
+    return this.attributes.sequence.length === 0;
+  },
+
+  save: function () {
+    if (this.isBlank()) {
+      throw "track cannot be blank!";
+    } else if (this.attributes.name === "") {
+      throw "name cannot be blank";
+    } else {
+      TrackActions.createTrack(this.attributes);
+    }
   }
 
 
