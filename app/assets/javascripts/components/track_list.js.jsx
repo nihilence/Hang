@@ -11,13 +11,19 @@ var TrackList = React.createClass({
   render: function () {
     return (
       <div className="track-list">
-        <h3> Track List </h3>
+        <h1> Track List </h1>
         {
-          this.state.tracks.map(function(track) {
-            return <TrackPlayer key={track.get('id')} track={ track }/>;
+          this.state.tracks.map(function (track) {
+            return <TrackPlayer key={track.get('id')} track={track}>track.name </TrackPlayer>;
           })
+
+        });
         }
       </div>
     );
+  },
+
+  _onChange: function () {
+    this.setState({ tracks: TrackStore.all() });
   }
 });

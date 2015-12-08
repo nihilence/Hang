@@ -22,6 +22,7 @@ var Organ = React.createClass({
           }
         </div>
         <Recorder/>
+        <TrackList/>
       </div>
     );
   }

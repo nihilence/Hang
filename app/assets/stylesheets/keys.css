@@ -18,7 +18,7 @@
   height: 200px;
 }
 
-h1, h5, h2 {
+h1, h5, h2, h3 {
   color: #ff00ff;
 }
 
@@ -43,4 +43,11 @@ body {
 
 .play {
   background-color: green;
+}
+
+.track-list {
+  position: absolute;
+  bottom: 400px;
+  left: 600px;
+  color: #ff00ff;
 }
