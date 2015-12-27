@@ -18,8 +18,7 @@ var TrackList = React.createClass({
               return <TrackPlayer key={track.id} track={track}>track.name </TrackPlayer>;
             })
 
-           });
-          }
+           }
         </div>
       </div>
     );
