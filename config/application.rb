@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module OrganGrinder
+module Hang
   class Application < Rails::Application
     config.active_record.schema_format = :sql
     # Settings in config/environments/* take precedence over those specified here.
