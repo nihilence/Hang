@@ -1,28 +1,32 @@
-== README
+# Hang
+==
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hang drums sound beautiful, [see for yourself], but they are expensive and
+require a welding torch to build. Hang is built with Rails, Flux and React and
+allows users to play and record songs without the cost.
 
-Things you may want to cover:
+## To Run
+Hang requires Postgresql, ensure it is downloaded and running. `rails s` will
+start the server on port 3000.
 
-* Ruby version
+## To do
+[X] Sounds can be played with keyboard
+[X] Songs can be recorded and saved to the database
+[X] Recorded songs are listed and can be played back
+[ ] Tests
+[ ] Replace default sounds with hang drum recordings
+[ ] Replace keyboard with illuminating hang drum
+[ ] Create mp3 of recording
+[ ] Email or post mp3s
+[ ] Host on Heroku
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Extras
+[ ] Beautify UI
+[ ] Vocal recording
+[ ] Layered tracks
+[ ] Metronome and recording visuals
+[ ] Additional instruments
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+[see for yourself]: https://www.youtube.com/watch?v=GBiVq2MsCbs
